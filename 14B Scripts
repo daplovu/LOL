@@ -1,0 +1,59 @@
+-- Nama game atau window
+local GameName = "[REVAMP!!!] Farrel Squad Driving Indonesia"
+
+-- Memuat OrionLib dari URL yang diberikan
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+-- Membuat window utama menggunakan OrionLib
+local MainWindow = OrionLib:MakeWindow({
+    Name = GameName,
+    HidePremium = false,
+    SaveConfig = true,
+    ConfigFolder = "OrionTest"
+})
+
+-- Membuat tab Auto Farming di window utama
+local AutoFarmTab = MainWindow:MakeTab({
+    Name = "Auto Farming",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false 
+})
+
+-- Membuat section Auto Farm di dalam tab Auto Farming
+local AutoFarmSection = AutoFarmTab:AddSection({
+    Name = "Auto Farm"
+})
+
+-- Menambahkan tombol Auto Farm ke dalam section
+AutoFarmSection:AddButton({
+    Name = "U will get 14B",
+    Callback = function()
+        print("Auto Farm dimulai...") -- Cetak pesan untuk menunjukkan bahwa Auto Farm dimulai
+        
+        -- Skrip Auto Farm dimulai di sini
+        -- Misalnya: Mengulangi tindakan farming sampai kondisi tertentu tercapai
+        while true do
+            -- Contoh tindakan Auto Farm (kamu bisa mengganti dengan tindakan lain)
+            local args = {
+                [1] = "2021 Ferrada SF90 Stradale"
+            }
+            
+            game:GetService("ReplicatedStorage").Dealership.SellCar:InvokeServer(unpack(args))
+            
+            game:GetService("ReplicatedStorage").Box.Claim:FireServer(unpack(args))
+
+            -- Misalkan kamu ingin bergerak ke posisi tertentu sebagai bagian dari Auto Farm
+            humanoidRootPart.CFrame = CFrame.new(Vector3.new(0, 10, 0)) -- Ganti dengan posisi yang diinginkan
+
+            -- Berikan jeda agar tidak terlalu cepat
+            wait(1) -- Jeda 1 detik sebelum melakukan tindakan selanjutnya
+
+            -- Kamu bisa menambahkan kondisi untuk menghentikan loop jika diperlukan
+            -- Contoh: jika kamu ingin menghentikan loop setelah 10 kali iterasi
+            -- local count = 0
+            -- if count >= 10 then
+            --     break
+            -- end
+        end
+    end    
+})
