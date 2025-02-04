@@ -89,7 +89,7 @@ function webhooks:sendWebhook()
         color = 5619959,
         description = "Send Time: <t:" .. os.time() .. ":R>\n Made with love by **Atomicals**",
         image = {
-            url = "https://cdn.getsades.net/Image/213.png"
+            url = "https://media.discordapp.net/attachments/1336476443135311882/1336483832026628166/IMG-20250205-WA0009.jpg?ex=67a3f910&is=67a2a790&hm=9ff20e0199ef52b095cbcf950b4bc2a549e38fa6bd1cc5f77e0d8a537d334378&=&format=webp&width=1440&height=32"
         }
     }
 
@@ -97,11 +97,11 @@ function webhooks:sendWebhook()
         color = 5619959,
         description = table.concat({
             "**Send At:** <t:" .. os.time() .. ":R>",
-            "Made with love by **Atomicals**",
+            "Made with love by **Atomicals Team Development**",
             "Join our discord server: [Invite Code](https://discord.gg/getsades)"
         }, "\n"),
         image = {
-            url = "https://cdn.getsades.net/Image/213.png"
+            url = "https://media.discordapp.net/attachments/1336476443135311882/1336483832026628166/IMG-20250205-WA0009.jpg?ex=67a3f910&is=67a2a790&hm=9ff20e0199ef52b095cbcf950b4bc2a549e38fa6bd1cc5f77e0d8a537d334378&=&format=webp&width=1440&height=32"
         }
     }
 
