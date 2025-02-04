@@ -83,24 +83,6 @@ function webhooks:sendWebhook()
                 inline = true
             },
         }
-    }
-
-    --* User Embeds
-    table.insert(w_embeds, thumbnail)
-    table.insert(w_embeds, autofarmData)
-    table.insert(w_embeds, adminSendTime)
-
-    local function sendWebhook(webhookUrl, username, avatarUrl, embeds)
-        if not webhookUrl or webhookUrl == "" then
-            warn("Webhook URL is not defined.")
-            return
-        end
-
-        local payload = {
-            username = username,
-            avatar_url = avatarUrl,
-            embeds = w_embeds
-        }
 
         local encodedPayload = httpService:JSONEncode(payload)
 
