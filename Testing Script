@@ -85,26 +85,6 @@ function webhooks:sendWebhook()
         }
     }
 
-    local sendTime = {
-        color = 5619959,
-        description = "Send Time: <t:" .. os.time() .. ":R>\n Made with love by **Atomicals**",
-        image = {
-            url = "https://media.discordapp.net/attachments/1336476443135311882/1336485190423547979/IMG-20250205-WA0011.jpg?ex=67a3fa54&is=67a2a8d4&hm=71ce12f0ba03083c7556a70cf9557b7c138386ae2eaae4665b55c48d80076255&=&format=webp&width=1440&height=36"
-        }
-    }
-
-    local adminSendTime = {
-        color = 5619959,
-        description = table.concat({
-            "**Send At:** <t:" .. os.time() .. ":R>",
-            "Made with love by **Atomicals Team Development**",
-            "Join our discord server: [Invite Code](https://discord.gg/getsades)"
-        }, "\n"),
-        image = {
-            url = ""
-        }
-    }
-
     --* User Embeds
     table.insert(w_embeds, thumbnail)
     table.insert(w_embeds, autofarmData)
