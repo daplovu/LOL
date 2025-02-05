@@ -98,7 +98,7 @@ function webhooks:sendWebhook()
         description = table.concat({
             "**Send At:** <t:" .. os.time() .. ":R>",
             "Made with love by **Atomicals Team Development**",
-            "Join our discord server: [Invite Code](https://discord.gg/getsades)"
+            "Join our discord server: [Sades HUB](https://discord.gg/getsades)"
         }, "\n"),
         image = {
             url = "https://media.discordapp.net/attachments/1336476443135311882/1336487122290348073/20250205_070230.jpg?ex=67a3fc20&is=67a2aaa0&hm=a50a7e1c34ac921e9ec86158a4ce44077f304e99ca7366227ed79da9ba12e610&=&format=webp&width=1440&height=38"
