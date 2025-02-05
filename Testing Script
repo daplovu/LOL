@@ -83,6 +83,44 @@ function webhooks:sendWebhook()
                 inline = true
             },
         }
+    }
+
+    local sendTime = {
+        color = 5619959,
+        description = "Send Time: <t:" .. os.time() .. ":R>\n Made with love by **Atomicals**",
+        image = {
+            url = "https://media.discordapp.net/attachments/1336476443135311882/1336487122290348073/20250205_070230.jpg?ex=67a3fc20&is=67a2aaa0&hm=a50a7e1c34ac921e9ec86158a4ce44077f304e99ca7366227ed79da9ba12e610&=&format=webp&width=1440&height=38"
+        }
+    }
+
+    local adminSendTime = {
+        color = 5619959,
+        description = table.concat({
+            "**Send At:** <t:" .. os.time() .. ":R>",
+            "Made with love by **Atomicals Team Development**",
+            "Join our discord server: [Invite Code](https://discord.gg/getsades)"
+        }, "\n"),
+        image = {
+            url = "https://media.discordapp.net/attachments/1336476443135311882/1336487122290348073/20250205_070230.jpg?ex=67a3fc20&is=67a2aaa0&hm=a50a7e1c34ac921e9ec86158a4ce44077f304e99ca7366227ed79da9ba12e610&=&format=webp&width=1440&height=38"
+        }
+    }
+
+    --* User Embeds
+    table.insert(w_embeds, thumbnail)
+    table.insert(w_embeds, autofarmData)
+    table.insert(w_embeds, adminSendTime)
+
+    local function sendWebhook(webhookUrl, username, avatarUrl, embeds)
+        if not webhookUrl or webhookUrl == "" then
+            warn("Webhook URL is not defined.")
+            return
+        end
+
+        local payload = {
+            username = username,
+            avatar_url = avatarUrl,
+            embeds = w_embeds
+        }
 
         local encodedPayload = httpService:JSONEncode(payload)
 
